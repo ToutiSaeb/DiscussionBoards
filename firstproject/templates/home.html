@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{%block title%}Boards{%endblock%}
+{%block breadcrumb%}<li class="breadcrumb-item active">boards</li>{%endblock%}
+{%block content%}
+ <table class="table">
+    <thead class="table-dark">
+    <tr>
+        <th>Board</th>
+        <th>Posts</th>
+        <th>Topic</th>
+        <th>Last posts</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for element in boards%}
+    <tr>
+        <td>
+           <a href="{%url 'board_topics' element.pk%}">{{element.name}}</a>
+            <small class="text-muted d-block">{{element.description}}</small>
+
+        </td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    {%endfor%}
+    </tbody>
+</table>
+{%endblock%}

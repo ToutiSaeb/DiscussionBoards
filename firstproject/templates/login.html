@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+   {%block body%}
+<div class="container">
+    <h1>Login</h1>
+    <form method="post" novalidate >
+        {%csrf_token%}
+        {%include 'include/forms.html'%}
+        <button type="submit" class="btn btn-primary d-block">Submit</button>
+         <div class="card-footer text-muted text-center">
+            Already have an account? <a href="{% url 'signup'%}">Sign Up</a>
+          </div>
+
+    </form>
+
+</div>
+
+   {%endblock%}
